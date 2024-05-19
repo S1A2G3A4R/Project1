@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    hello
+    <script>
+        function check(num){
+           
+          if(num=="a"){
+            console.log("apple");
+          }
+          else if (num=="b") {
+            console.log("banana");
+          }
+          else if(num=="c"){
+            console.log("cat");
+          }
+         else{
+            console.log("none of these");
+         }
+        }
+        check("a")
+       
+
+
+        function check2(value){
+            if(value%2===0){
+                console.log("the value is divisible by 2")
+            }
+            else if(value%3===0){
+                console.log("divisible by 3")
+            }
+            else{
+                console.log("not divisible by 2 and 3")
+            }
+
+        }
+
+        check2(11)
+
+        function check3(num){
+             if(num%3==0 && num%5==0){
+                console.log("fizzbuzz")
+            }
+           else if(num%3==0){
+                console.log("fizz");
+            }
+            else if(num%5==0){
+                console.log("buzz")
+            }
+            
+            else if(num%3==0 || num%5==0){
+                console.log(buzzfizz)
+            }
+        }
+        
+       check3(15)
+
+    function check4(num){
+        if(num>0){
+            console.log("positive number")
+        }
+       else if(num<0){
+            console.log("negative number")
+        }
+        else if(num==0){
+            console.log("number is 0")
+        }
+
+    }
+    check4(-5)
+
+    function check6(a,b){
+        let c=a+b;
+        console.log("sum of number",c);
+        let d=b-a;
+        console.log("difference is", d);
+        let e=a*b;
+        console.log("multiplication is", e);
+        if(a>b){
+            console.log("first number is greater");
+        }
+        else if(a<b){
+            console.log("second numer is greater");
+        }
+        else if(a==b){
+            console.log("both numbers are equal")
+        }
+
+
+    }
+   
+   let data1=prompt("Enter the number")
+   let data2=prompt("Enter the number")
+   console.log(Number(data1));
+   console.log(Number(data2));
+   check6(data1,data2)
+    </script>
+</body>
+</html>

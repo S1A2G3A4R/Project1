@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <button id="btn">Add to do</button>
+    <ul id="list"></ul>
+</body>
+<script>
+    const input=document.getElementById("input");
+    let value=input.value;
+    const btn=document.getElementById("btn");
+    const list=document.getElementById("list");
+    
+    let todolistener=()=>{
+        let li=document.createElement("li");
+       let h4=document.createElement("h4");
+        const btndelete=document.createElement("button");
+        const edit=document.createElement("button");
+        btndelete.innerText= "delete me";
+        edit.innerText="Edit me";
+        li.innerText=input.value;
+        li.append( h4,btndelete,edit);
+        list.appendChild(li,);
+
+        btndelete.addEventListener("click",(event)=>{
+            list.removeChild(li);
+        })
+        edit.addEventListener("click",(event)=>{
+            btn.removeEventListener("click",todolistener,{passive:true});
+
+
+            // to access the first element we split the string by delete button
+            // console.log(li.innerText.split("delete me")[0]);
+            let litag=li.innerText.split("delete me")[0];
+            input.value=litag;
+            btn.innerText="Update me";
+            btn.addEventListener("click",(event)=>{
+                // console.log(btn);
+                // li.innerText.split("delete me")[0]=input.value
+                li.innerHTML="";
+                li.append(input.value,btndelete,edit);
+                
+            //     console.log(li);
+            //   litag=input.value;
+            //   const h4=litag;
+            //   h4.innerText=input.value;
+              
+            
+            })
+        
+        })
+
+
+    }
+    btn.addEventListener("click",todolistener);
+
+
+    
+</script>
+</html>

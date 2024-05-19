@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="border: 2px solid black; height: 300px; width: 200px;">
+        <input type="number" name="" id="one">
+        <input type="number" name="" id="two">
+        <input type="text" name="" id="output" readonly>
+        <button id="add"> ADD</button>
+        <button id="subtract"> Subtract</button>
+        <button id="multiply"> Multiply</button>
+        <button id="division"> Division</button>
+        <script>
+            let one=document.getElementById("one");
+            let two=document.getElementById("two");
+            let output=document.getElementById("output");
+            let add=document.getElementById("add");
+            let subtract=document.getElementById("subtract");
+            let multiply=document.getElementById("multiply");
+            let division=document.getElementById("division");
+        
+            add.addEventListener("click",function(){
+                let onevalue=one.value;
+            let twovalue=two.value;
+            /* this will work as a string so it will concatination then we can use either parseInt or parseFloat*/
+                // let sum= parseInt(onevalue)+parseInt(twovalue);
+                // to remove this confusion we prefer to use Number
+                let sum =Number(onevalue)+Number(twovalue);
+                output.value=sum;
+            })
+            subtract.addEventListener("click",function(){
+                let onevalue=one.value;
+                let twovalue=two.value;
+                let subtract=Number(onevalue)-Number(two.value);
+                output.value=subtract;
+            })
+            multiply.addEventListener("click",function(){
+                let onevalue=one.value;
+                let twovalue=two.value;
+                let multiply=Number(onevalue)*Number(two.value);
+                output.value=multiply;
+            })
+            division.addEventListener("click",function(){
+                let onevalue=one.value;
+                let twovalue=two.value;
+                let division=Number(onevalue)/Number(two.value);
+                output.value=division;
+            })
+
+
+            
+        </script>
+
+    </div>
+</body>
+</html>

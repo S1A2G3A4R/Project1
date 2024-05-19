@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    hello
+    <script>
+        let students=[{name:"ram",scores:[10,2,34,21]},{name:"aman",scores:[3,24,43,12]},{name:"deep",scores:[1,27,49,82]}]
+        function getName(name,cb){
+           const nameobj=students.find(ele=>ele.name==name);
+           const name1=nameobj.name
+           cb(name1);
+        
+        }
+        getName("aman",function(name1){
+           console.log(name1);
+        })
+    </script>
+</body>
+</html>

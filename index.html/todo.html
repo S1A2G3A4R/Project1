@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <button id="button">To do list</button>
+    <ul id="list"></ul>
+    <script>
+        const input=document.getElementById("input");
+        const button=document.getElementById("button");
+        const list=document.getElementById("list");
+        button.addEventListener("click",function(){
+            const value=input.value;
+            /* correct to get the next input in the next line */
+            list.innerHTML=list.innerHTML+"<li>"+value +" <button> Delete </button> </li>"
+            /* if we want to replace the previous value by giving next input */
+            /* list.innerHTML="<li>"+value+"</li>" */
+            /* if we want to get a input without the list /*
+           /* list.innerHTML=value;*/
+        })
+    </script>
+</body>
+</html>

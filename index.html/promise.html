@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Promise
+    <script>
+        const database=[
+            {name:"sagar", course:"ma", universityid:1111 },
+            {name:"anshul", course:"ba", universityid:1154 },
+            {name:"aman", course:"bca", universityid:1165 },
+            {name:"deepak", course:"bcom", universityid:1187 },
+            
+        ]
+
+    //     function dbOperation(universityid){
+    //       let student=database.find(function(ele){
+    //       return ele.universityid==universityid; 
+    //       })
+    //      return student;
+    //     }
+    //    console.log(dbOperation(1165));
+     //     function dbOperation(universityid){
+    //       let student=database.find(ele=>{
+    //       return ele.universityid==universityid; 
+    //       })
+    //      return student;
+    //     }
+    //    console.log(dbOperation(1165));
+
+    // but this has to be done on the basis of api call--------
+    // by using call back------
+
+    function dbOperation(universityid,cb){
+        setTimeout(()=>{
+          let student=database.find(ele=>{
+            return ele.universityid==universityid;
+          })
+          if(student){
+            cb(null,student)
+          }
+          else{
+            cb(new Error("student not found"),null)
+          }
+
+        },3000)
+    }
+
+    dbOperation(1165,function(err,studentdata){
+        if(err!=null){
+            console.log(err)
+        }
+        else{
+            console.log(studentdata)
+        }
+    })
+
+    // by using promises ------
+    function dbOperationPromise(universityid,cb){
+         const promise=new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+            let student=database.find(ele=>{
+                return ele.universityid==universityid;
+            })
+            if(student){
+                resolve(student)
+            }
+            else{
+                reject(new Error("student not found"))
+            }
+            },3000)
+         })
+
+         return promise;
+    }
+
+    dbOperationPromise(1154).then(data=>{
+        console.log("promise",data);
+    }).catch(err=>{
+        console.log(err);
+    })
+    
+
+    // by using async await--------
+
+    async function getData(){
+        try {
+            let data= await dbOperationPromise(1187);
+            console.log("data for async",data);
+
+        } catch (error) {
+            console.log(err);
+        }
+    }
+    getData();
+
+
+    </script>
+</body>
+</html>

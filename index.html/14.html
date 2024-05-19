@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #main{
+            text-align: center;
+            margin-top: 20px;
+        }
+        .main1{
+            margin-top: 10px;
+        }
+       table,tr,td,th{
+            margin-left: 550px;
+            margin-top: 40px;
+            border: 2px solid black;
+            border-collapse: collapse;
+            row-gap: 2;
+            column-gap: 2;
+        
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+       <div class="main1"> <label for="one">First Name :</label>
+          <input type="text" name="" id="one"> </div>
+
+         <div class="main1"> <label for="two">Last Name :</label>
+          <input type="text" name="" id="two"></div>
+
+         <div class="main1">  <label for="three">Phone Number :</label>
+          <input type="text" name="" id="three">
+        </div>
+         <div class="main1"> <button id="btn"> Add in Table</button></div>
+   
+    <table>
+        <tr>
+            <th>First Name</th>
+            <th> Last Name</th>
+            <th>Phone Number</th>
+        </tr>
+       
+      </table>
+    <script>
+    const table=document.getElementsByTagName("table")
+    const input1=document.getElementById("one");
+    const input2=document.getElementById("two");
+    const input3=document.getElementById("three");
+    const btn=document.getElementById("btn");
+    
+    btn.addEventListener("click",function(){
+        const tb=document.createElement("tr");
+    const td1=document.createElement("td");
+    const td2=document.createElement("td");
+    const td3=document.createElement("td");
+    td1.innerText=input1.value;
+    td2.innerText=input2.value;
+    td3.innerText=input3.value;
+    tb.append(td1,td2,td3)
+    table[0].appendChild(tb)
+    const btn1=document.createElement("button");
+    btn1.innerText="delete";
+    tb.append("btn1")
+    
+    })
+    </script>
+</body>
+</html>

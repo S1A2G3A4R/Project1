@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Mammal{
+
+        }
+        const m=new Mammal();
+        console.log(m);
+
+        class Bird extends Mammal{
+            constructor(feathers){
+                super();
+                this.Feathers=feathers;
+            }
+            getFeathers(){
+                return this.Feathers;
+            }
+        }
+        const eagle=new Bird(9);
+        console.log("Feathers",eagle.getFeathers());
+
+        class LandBird extends Bird{
+            constructor(legs,feathers){
+                super(feathers);
+                this.Legs=legs;
+            }
+        }
+        const penguin=new LandBird(2,4);
+        console.log(penguin);
+
+     //  --- using object.create() ----
+         
+      Object.prototype.name="God Object";
+      const grandFather=new Object();
+      grandFather.name="john";
+      grandFather.assets="2 houses";
+      console.log(grandFather);
+
+      const Father=Object.create(grandFather);
+    //   Father.name="Shavan";
+      Father.assets="2 cars";
+      console.log(Father);
+
+      const son=Object.create(Father);
+    //   son.name="Henry";
+      son.car="Ferrari";
+      son.assets="ps5";
+      console.log(son);
+
+
+      console.log("Name",son.name)
+
+
+
+
+    </script>
+</body>
+</html>

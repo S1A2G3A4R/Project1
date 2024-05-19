@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>functions</title>
+</head>
+<body>
+    <div class="container">
+        <form id="myForm">
+            <input type="text" name="name" placeholder="Name"><br>
+            <input type="email" name="email" placeholder="Email"><br>
+            <input type="number" name="age" placeholder="Age"><br>
+            <input type="checkbox" name="subscribe" id="subscribe"> Subscribe to newsletter<br>
+            <select name="gender">
+                <option value="">Select gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+<script>
+    function getDataFromForm(event) {
+    event.preventDefault(); 
+
+    const form = event.target;
+
+    const formData = {};
+    form.querySelectorAll('input, select').forEach(input => {
+        const name = input.name;
+        const value = input.type === 'checkbox' ? input.checked : input.value;
+        if (name) {
+            formData[name] = value;
+        }
+    });
+
+    console.log(formData); 
+}
+document.getElementById('myForm').addEventListener('submit', getDataFromForm);
+</script>
+</html>

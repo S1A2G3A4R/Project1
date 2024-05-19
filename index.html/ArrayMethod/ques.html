@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    helo
+    <script>
+        let obj={name:"sagar", age:22,city:"meerut"}
+        let arr=Object.keys(obj);
+        let update=arr.map((ele)=>{
+            return ele.toLocaleUpperCase();
+        })
+        console.log(update);
+        console.log(obj)
+        console.log(arr)
+
+        const arr1=Object.keys(obj).map(ele=>ele.toLocaleUpperCase());
+        function display(obj){
+            const obj1={}
+            let arr1=Object.keys(obj).map(ele=>ele.toLocaleUpperCase());
+            for(i=0; i<arr1.length; i++){
+              obj1.arr1[i]=Object.values(obj)[i];
+
+            }
+            return obj1;
+           
+
+
+        // }
+        // console.log(display(obj));
+
+        // function display(obj){
+        //     let arr1=Object.keys(obj).map(ele=>ele.toLocaleUpperCase());
+        //     let arr2=Object.values(obj);
+        //     let obj1={};
+        //     for(let i=0; i<arr1.length; i++){
+        //        obj1.arr1[i]=arr2[i]
+        //     }
+        //     return obj1;
+        // }
+        // console.log(display(obj))
+
+
+
+        const obj2={name:"sagar",phone:8171,city:"meerut"};
+     function nonstring(obj2){
+            let array=Object.values(obj)
+            let val=array.filter(function(ele){
+                if(typeof ele !="string"){
+                  console.log(ele)
+                }
+
+            })
+            
+        }
+        // console.log(nonstring(obj2));
+       
+
+
+        
+    </script>
+</body>
+</html>

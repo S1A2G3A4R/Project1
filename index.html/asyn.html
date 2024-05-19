@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    async and wait 
+    <script>
+      const Database=[
+    {
+      "name": "Willie England",
+      "email": "willieengland@macronaut.com",
+      "username": "willieengland@macronaut.com",
+      "password": "Tooleville",
+      "image": "Newry",
+      "universityId": 949883
+    },
+    {
+      "name": "Lyons Santos",
+      "email": "lyonssantos@macronaut.com",
+      "username": "lyonssantos@macronaut.com",
+      "password": "Farmers",
+      "image": "Ellerslie",
+      "universityId": 253619
+    },
+    {
+      "name": "Snow Giles",
+      "email": "snowgiles@macronaut.com",
+      "username": "snowgiles@macronaut.com",
+      "password": "Gilmore",
+      "image": "Montura",
+      "universityId": 745788
+    },
+    {
+      "name": "Rowland Fleming",
+      "email": "rowlandfleming@macronaut.com",
+      "username": "rowlandfleming@macronaut.com",
+      "password": "Gorham",
+      "image": "Monument",
+      "universityId": 902664
+    },
+    {
+      "name": "Reeves Matthews",
+      "email": "reevesmatthews@macronaut.com",
+      "username": "reevesmatthews@macronaut.com",
+      "password": "Sterling",
+      "image": "Fruitdale",
+      "universityId": 557566
+    },
+    {
+      "name": "Parks Horne",
+      "email": "parkshorne@macronaut.com",
+      "username": "parkshorne@macronaut.com",
+      "password": "Jamestown",
+      "image": "Imperial",
+      "universityId": 390761
+    },
+    {
+      "name": "Raymond Sparks",
+      "email": "raymondsparks@macronaut.com",
+      "username": "raymondsparks@macronaut.com",
+      "password": "Richmond",
+      "image": "Cornucopia",
+      "universityId": 651298
+    },
+    {
+      "name": "Heather Washington",
+      "email": "heatherwashington@macronaut.com",
+      "username": "heatherwashington@macronaut.com",
+      "password": "Cochranville",
+      "image": "Whitmer",
+      "universityId": 948912
+    },
+    {
+      "name": "Mary Collier",
+      "email": "marycollier@macronaut.com",
+      "username": "marycollier@macronaut.com",
+      "password": "Cuylerville",
+      "image": "Iberia",
+      "universityId": 563346
+    },
+    {
+      "name": "Elizabeth Mcpherson",
+      "email": "elizabethmcpherson@macronaut.com",
+      "username": "elizabethmcpherson@macronaut.com",
+      "password": "Floriston",
+      "image": "Valmy",
+      "universityId": 228987
+    },
+    {
+      "name": "Nichole Clemons",
+      "email": "nicholeclemons@macronaut.com",
+      "username": "nicholeclemons@macronaut.com",
+      "password": "Riegelwood",
+      "image": "Cleary",
+      "universityId": 891848
+    }]
+
+    function DbOperationPromise(universityId){
+        let promise=new Promise((resolve,reject)=>{
+             setTimeout(()=>{
+               let student=Database.find(ele=>{
+                return ele.universityId==universityId;
+               })
+               if(student){
+                resolve(student)
+               }
+               else{
+                reject(new Error("student not found"))
+               }
+             },3000)
+        })
+        return promise;
+
+        }
+
+        function extractName(obj){
+              return new Promise((resolve,reject)=>{
+                resolve(obj.name)
+              })
+        }
+    
+        DbOperationPromise(228987)
+        .then(obj=>{
+            console.log("promise",obj);
+        })
+        .then(obj=>{
+            extractName(obj)
+        })
+        .catch(err=>{
+            console.log(err);
+        })
+   
+    </script>
+</body>
+</html>

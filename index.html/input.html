@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1 id="heading"> My name is Sagar</h1>
+        <button id="button">click</button>
+        <input type="text" id="input">
+        </div>
+        <script>
+            // const button=document.getElementById("button")
+            // button.addEventListener("click",function(){
+            //     document.getElementById("heading").style.color="blue";
+            //     document.getElementById("heading").style.fontStyle="italic";
+            //     console.log("button clicked");
+
+            // } )
+
+        //   To get the value of the input 
+
+            /*  const button=document.getElementById("button")
+              button.addEventListener("click",function(){
+                let input=document.getElementById("input")
+            console.log(input.value);
+
+              })
+              */
+
+              //  conditions-----
+            //   const button=document.getElementById("button")
+            //   button.addEventListener("click",function(){
+            //     let input=document.getElementById("input")
+            //     const color=input.value;
+            //    document.getElementById("heading").style.color=color;
+            //   })
+
+            // onclick change color and if again click go back to previous color
+
+           const button=document.getElementById("button")
+           button.addEventListener("click",function(){
+            let change=document.getElementById("heading")
+            if(change.style.color!="red"){
+                change.style.color="red";
+            }
+            else{
+                change.style.color="";
+            }
+           })
+
+        </script>
+</body>
+</html>

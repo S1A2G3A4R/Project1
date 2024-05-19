@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    hello
+    <script>
+        let str="Sagar";
+     function check(str){
+        let count=0;
+        for(let i=0; i<str.length; i++){
+        if(str[i]=="a"||str[i]=="e"||str[i]=="i"||str[i]=="o"||str[i]=="u"){
+            count++;
+        }
+        }
+        return count;
+       
+    }
+    console.log(check(str));
+
+  let str1= "hello world";
+  function count(str1){
+    let d=0;
+    for(let i=0; i<str1.length; i++){
+       if(str1[i]==" "){
+        d-1;
+       }
+       else{
+        d++;
+       }
+        
+    }
+    return d;
+  }
+  console.log(count(str1));
+  
+
+
+
+    </script>
+</body>
+</html>

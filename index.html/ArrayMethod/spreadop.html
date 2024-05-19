@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    hello
+    <script>
+        // string with spread operator 
+         
+        function foo(){
+            return "hello world"
+        }
+        const st="hey there how are you!"
+        console.log(...st);
+        console.log(st);
+        console.log(...foo());
+        console.log(foo());
+
+        // set datastructure  --- to remove duplicate elements 
+        const duplicate=[7,7,7,8,9,0,1];
+        const update= new Set(duplicate);
+        console.log(update);  // not give the array but give unique elements 
+        console.log(duplicate);  // not change the original array
+        // to get unique elements in array 
+        const unique=[...update];
+        console.log(unique);
+       
+        // spread operator with object
+        let obj={name:"sagar",age:22,city:"meerut"};
+        let c={...obj};
+        console.log(c);
+        // if we want to update some field---
+        let d1={...obj,city:"killaparikshitgarh"}
+        console.log(d1);
+        console.log("new",obj);
+        
+
+        // let take an another example---
+        let d2={name:"sagar",age:22,city:"delhi"};
+        let gh=d2;  //  it will change the original object also---
+        console.log(gh);
+        gh.name="paul";
+        console.log(gh);
+        console.log(d2);
+
+        // rest operator 
+        function bar(...sagar){
+            console.log(sagar[0]);
+            for(let i=0; i<sagar.length; i++){
+                console.log(sagar[i]);
+            }
+        }
+        bar(8,3,4,4,5,2);
+
+        function bar1(g,...h){
+          console.log(g);
+          console.log(h);
+        }
+        bar1("sagar",89,3,4,1,6);
+       
+        // split method -------
+        let str="hello,people";
+        let str1="he-llo-people";
+        console.log(str);
+        console.log(str.split(""));
+        console.log(str.split(","));
+        console.log(str1.split("-"));
+
+        // Join method ----
+        const arr=["hey","there","how","are","you"];
+        console.log(arr.join(","));
+        console.log(arr.join(""));
+        console.log(arr);
+
+        // push and pop method (from right side )
+        const d=[];
+        d.push(9);
+        console.log(d);
+        d.push(91);
+        console.log(d);
+        d.pop();
+        console.log(d);
+        d.pop();
+        console.log(d);
+
+        // Shift and Unshift method -----(from left side)
+        const ck=[];
+        ck.unshift(9);
+        console.log(ck);
+        ck.unshift(81);
+        console.log(ck);
+        ck.shift();
+        console.log(ck);
+
+        // find method ---
+        const dk=[1,2,3,4];
+        console.log(dk.find(function(ele){
+            if(ele%2==0){
+                return ele;
+            }
+        }))
+
+        // Includes method ---
+        const ar=[1,2,3,4];
+        console.log(ar.includes(4));
+        console.log(ar.includes(40));
+        console.log(ar.indexOf(4));
+        console.log(ar.indexOf(40));
+
+        // concat method in array---
+        const arr1=[1,2,3];
+        const arr2=[4,5,6,7,8];
+        const arr3=[9,10,11,12,13,14];
+        console.log(arr1.concat(arr2));
+        console.log(arr1.concat(arr2,arr3));
+         
+        let joined=[...arr1,...arr2];
+        console.log(joined);
+    </script>
+</body>
+</html>

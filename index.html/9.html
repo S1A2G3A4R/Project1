@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Practise
+    <script>
+        // function print(x){
+        //     for(let i=1; i<=x;i++){
+        //         if(i%3==0 && i%5==0){
+        //             console.log("AB");
+        //         }
+        //       else if(i%3==0){
+        //             console.log("A");
+        //         }
+        //         else if(i%5==0){
+        //             console.log("B");
+        //         }
+        //         else{
+        //             console.log(i);
+        //         }
+                
+        //         }
+        // }
+
+        
+        // print(15)
+
+        function callback(a,square1,cube1){
+            if(a%2==0){
+                square1(a);
+            }
+            else if(a%3==0){
+                cube1(a);
+            }
+        }
+            function square(a){
+                console.log(a*a);
+                return a*a;
+            }
+            function cube(a){
+                console.log(a*a*a);
+                return a*a*a;
+            }
+        
+
+        callback( 2,square,cube)
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function show(inp){
+            let obj={1:"error one",2:"error 2",3:"error 3", 4:"error 4",5:"error 5"}
+            if(inp!=0 && inp<=5){
+            let result=obj[inp]
+            return result;
+            }
+           else{
+            return "error 101"
+           }
+            
+        }
+         console.log(show(4));
+    </script>
+</body>
+</html>

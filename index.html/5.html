@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+    <style>
+        #btn {
+            background-color: blue;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="containner">
+        <h1>This is a heading</h1>
+        <p id="para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error, delectus placeat. Id nemo ex nihil
+            recusandae aperiam deleniti labore, maiores dolorum. Accusamus, sapiente. Quidem illum molestias maiores
+            commodi amet molestiae Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officia, tempore
+            provident amet dicta saepe eius itaque officiis sapiente facilis.</p>
+    </div>
+    <button id="btn" onclick="toggleHide()">Show/Hide</button>
+</body>
+<script>
+    //- Event is a signal that something is happening---  it may be click , context menu means when click right mouse button , subscribe , mouse over , mouse out ,mouse down while click mouse button,mouse up wlile release the mouse button after click----
+        
+
+          let para=document.getElementById('para');
+          para.addEventListener('mouseover',function run(){
+            alert('Mouse Inside')
+            console.log('Mouse inside');
+          });
+
+
+
+    function toggleHide() {
+        let btn = document.getElementById('btn');
+        let para = document.getElementById('para'); 
+        if (para.style.display != 'none'){
+          para.style.display = 'none'; } 
+         else{ para.style.display = 'block';
+         } }
+
+       // -----------this code can also be written as --------
+
+  //  function toggleHide() {
+  //      let btn = document.getElementById('btn');
+  //      let para = document.getElementById('para');
+//
+ //       if (para.style.display != 'block') {
+ //           para.style.display = 'block';
+ //       }
+ //       else {
+ //           para.style.display = 'none';
+ //       }
+ //   }
+
+
+</script>
+
+</html>

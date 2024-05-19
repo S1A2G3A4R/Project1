@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return function</title>
+</head>
+<body>
+    Welcome in javascript
+</body>
+<script>
+    console.log("return value function");
+    // Let's make a function which return the value //
+    function sum(a,b,c) {
+        let d = a+b+c;
+        return d;
+        // console.log("Function is returned")  this line will no execute because the programs 
+        //which return values does not execute further, ones return the value then then stop and 
+        // start for another given value 
+    }
+    let returnVal = sum(1,2,3);
+    console.log(returnVal);
+</script>
+</html>

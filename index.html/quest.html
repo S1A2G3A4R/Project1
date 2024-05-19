@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    hello
+    <script>
+       
+
+        function dummyCall(cb){
+            setTimeout(() => {
+                const students=[{name:"sagar",scores:[12,32,43,31]},
+        {name:"appu",scores:[66,87,93,71]},
+        {name:"aman",scores:[92,52,63,81]}];
+             
+          cb(students);
+
+            }, 2000);
+
+            return
+        }
+
+      function retrievestudentbyName(students,name,cb){
+         setTimeout(()=>{
+          const student=students.find((ele)=>ele.name==name)
+          cb(student);
+         },2000)
+      }
+
+      function processAverage(score,cb){
+        setTimeout(()=>{
+            let sum=0;
+          for(let i=0; i<score.length; i++){
+            
+            sum=sum+score[i];
+          }
+          const avg=sum/score.length;
+          cb(avg)
+
+        },2000)
+      }
+
+        dummyCall(function(data){
+        //    console.log(data);
+        retrievestudentbyName(data,"appu",function(student){
+            // console.log(student);
+            processAverage(student.scores,function(avg){
+             console.log(avg);
+            })
+        })
+        })
+
+    </script>
+</body>
+</html>

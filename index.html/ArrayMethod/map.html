@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Map Method of Array
+    <script>
+        let arr=[1,2,3,4];
+        let mp=arr.map(function(ele,i){
+            // return ele;
+            // console.log("Map",ele,i);
+            return ele*2;
+        })
+        console.log(mp);
+
+        // Another example
+        let strArr=["a","b","c","d"];
+        let r=[];
+        for(let i=0; i<strArr.length; i++){
+            r.push(strArr[i].toLocaleUpperCase());
+        }
+        console.log("updatedarray",r);
+
+        // it can be done by using map method---
+        let updatedArr=strArr.map((ele)=>{
+            return ele.toLocaleUpperCase();
+        })
+        console.log("updatedArr",updatedArr);
+
+    // it can also done in a single line 
+    let updatedArr1=strArr.map(ele=>ele.toLocaleUpperCase());
+    console.log(updatedArr1)
+    </script>
+</body>
+</html>

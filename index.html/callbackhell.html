@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    hello
+    <script>
+        function getcountryidbyName(countryName,cb){
+            let country=[{Name:"India", countryId:5},
+            {Name:"USA", countryId:2}, {Name:"Germany", countryId:4}]
+             
+            const countryObj=country.find(ele=>ele.Name==countryName);
+            // console.log(countryObj)
+            const countryId=countryObj.countryId;
+            cb(countryId);
+        }
+        function getstateidbycountryId(countryId,cb){
+            let states=[{Name:"India", countryId:5,state:"UP",id:50},
+            {Name:"USA", countryId:2,state:"MP",id:45}, {Name:"Germany", countryId:4,state:"HP",id:55}]
+             const stateObj=states.find(function(ele){
+                return ele.countryId==countryId;
+                // cb(stateObj.id);
+                
+             })
+             cb(stateObj.id);
+        }
+        function getcityidbystateId(stateid,cb){
+            let city=[{stateid:50,name:"meerut",id:77},{stateid:45,name:"killa",id:71},{stateid:55,name:"badhla",id:70}]
+            const cityObj=city.find(function(ele){
+                   return ele.stateid==stateid;
+
+            })
+            cb(cityObj)
+        }
+        getcountryidbyName("USA",function(countryId){
+        //    console.log("From callback",countryId)
+         getstateidbycountryId(countryId,function(stateid){
+                      getcityidbystateId(stateid,function(cityObj){
+                           console.log(cityObj);
+                      })
+         })
+        })
+    </script>
+</body>
+</html>

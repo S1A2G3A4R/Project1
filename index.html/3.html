@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops in Java </title>
+</head>
+<body>
+    <div class="container">
+        This is a container 
+    </div>
+    <script>
+        console.log("This is About Loops");
+        // About FOR LOOPS //
+        //-- first initialise the loop as i=0 it runs only once which meansit save the value as 1 then 
+        // check the condition as given example i<3 if conditon satisfy then loop runs after that i++ increase 
+        // the value then again check the condition 
+        let i=0;
+        for (let i = 0; i < 3; i++) {
+            console.log(i);
+         }
+         // FOR LOOP is used to itterate the elements from array 
+         let friends=["sagar","amrit","anshul","aman","pooja"];
+         for (let index = 0; index < friends.length; index++) {
+            console.log("hello friend " +  friends[index]); 
+         }
+         // FOR EACH FUNCTION -----
+         
+         friends.forEach(function f(element){
+          console.log("hello friend " + element + " welcome to java script");
+         }
+         );
+
+         //--- FOR OF LOOPS ---
+          
+         for (element of friends){
+            console.log("Goog morning friend " + element + " welcome in this era");
+         }
+           
+         // FOR IN LOOP which is used to iterate the objects in java script ---
+         let employee={
+            Name:"sagar",
+            salary: 10,
+            channel:"code with sagar"
+         }
+           
+         for(key in employee){
+            console.log(`The ${key} of employee is ${employee[key]}`);
+         }
+
+         //--- WHILE LOOP ---   i++ upate the value
+         let b =0;
+         while (b<5) {
+            console.log(`${b} is less than 5`);
+            b++;
+         }
+
+         // DO WHILE LOOP --- whether yhe condition is true or false do  wwhile ones execute 
+         // let us take an example 
+            let j = 78;
+            do {console.log(`${j} is less than 44  i know that it is false condition but it is in do while loop`);
+                j++;
+            } while (j<44);
+
+    </script>
+</body>
+</html>
